@@ -1,11 +1,11 @@
 ## 2. Directives
 Pada latihan kedua ini yaitu menampilkan atau memanipulasi data didalam element. Maksudnya menampilkan nilai didalam attribut dan atau menampilkan text didalam element.
 
-1. copy file `example.html`. 
+* copy file `example.html`. 
 * kemudian kita membuat element input yang didalamnya ditambahkan attribut `v-text`. Atrribut `v-text` inilah yang dinamakan **directive**. Directive menggunakan prefix `v-` merupakan attribut khusus yang mengindikasikan menggunakan vue. Directive ini akan menerapkan perilaku reaktif khusus untuk merender DOM. Attribut `v-text` merupakan salah satu dari macam directive yang ada di vue.
 
 Berikut ini adalah beberapa directive beserta fungsinya di latihan 2. 
-1. Directive `v-text` digunakan untuk menampilkan text didalam element. Sama halnya menggunakan double bracket / mustache `{{ property }}` didalam element.
+*. Directive `v-text` digunakan untuk menampilkan text didalam element. Sama halnya menggunakan double bracket / mustache `{{ property }}` didalam element.
 * Directive `v-html` digunakan untuk menampilkan text didalam element namun akan merender jika didalam text tersebut terdapat element. Berbeda halnya dengan `v-text` akan menampilkan sama seperti nilainya.
 * Directive `v-show` digunakan untuk menampilkan nilai jika nilainya true. Directive `v-show` ini akan menambahkan attribut `style=display:none` ketika nilainya false. Begitu juga sebaliknya, jika nilainya true maka attribut `style=display:none` akan hilang.
 * Directive `v-if` dan `v-else` digunakan untuk menampilkan nilai jika nilainya true atau sebaliknya false. Directive `v-if` dan `v-else` ini akan menghilangkan element tersebut jika nilainya false. Begitu juga sebaliknya akan ditampilkan jika nilainya true.
