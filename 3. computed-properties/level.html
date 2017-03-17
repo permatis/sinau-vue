@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS 2 - Tutorial</title>
+</head>
+<body>
+   
+    <div id="app">
+        <h1>Kamu masih di level : {{ level }}</h1>
+        
+        <p>Xp anda sekarang {{ xp }}</p>
+        <button @click="tambah()">Tambah XP</button>
+        <button @click="kurangi()">Kurangi XP</button>
+    </div>
+   
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                xp : 0
+            },
+            methods: {
+                tambah () {
+                    if(this.xp <= 90)
+                        return this.xp += 10;
+                },
+                kurangi () {
+                    if(this.xp >= 10)
+                        return this.xp -= 10;
+                }
+            },
+            computed: {
+                level () {
+                    if(this.xp >= 80) {
+                        return 'Senior';
+                    }else if(this.xp >= 50) {
+                        return 'Intermediate';
+                    } else {
+                        return 'Junior';
+                    }
+                        
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>

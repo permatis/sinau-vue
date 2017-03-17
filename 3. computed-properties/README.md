@@ -1,0 +1,8 @@
+## 3. Computed Properties
+
+Pada latihan 3 ini tentang `computed properties`. Sebelum membahas tentang `computed` mari membahas pada sebuah permasalahan.
+Pada dasarnya menempatkan expression didalam template itu sangat mudah, namun hanya untuk operasi sederhana saja. Dan juga akan menyulitkan apabila ketika maintain kode tersebet jika menempatkan banyak logik di dalam template. Intinya template itu kurang sederhana dan declarative. Menempatkan operasi logik atau operasi aritmatika didalam template hanya dapat digunakan template tersebut. Maka dari itu perlunya menggunakan `computed properties` untuk memisahkan logik-logik yang terlalu lengkap. `computed properties` sistem kerjanya sama seperti `controller` di konsep MVC. Sama halnya controller yang ada di framework angular dan framework lainnya.
+
+1. Pada contoh `dasar.html` bagaimana menampilkan message original dengan menampilkan via `computed properties` dan `methods`.
+2. Pada contoh `level.html` bagaimana menampilkan level berdasarkan kriteria xp. Apabila nilai xp berubah dan masuk dalam kriteria maka akan menampilkan levelnya. Dan  tugas `computed properties` yaitu menjalankan logik memfilter xp ketika masuk dalam kriteria. 
+3. Pada contoh `setter_getter.html` bagaimana membuat reactive / mengubah nilai property viewModel. Secara default `computed properties` hanya bekerja dengan getter, namun dapat menggunakan setter ketika itu dibutuhkan.  

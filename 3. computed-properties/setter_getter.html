@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS 2 - Tutorial</title>
+</head>
+<body>
+   
+    <div id="app">
+        <p>{{ lengkap }}</p>
+        Lengkap <input type="text" v-model="lengkap">
+        Depan <input type="text" v-model="depan">
+        Belakang <input type="text" v-model="belakang">
+    </div>
+   
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                depan: '',
+                belakang: ''
+            }, 
+            computed: {
+                lengkap: {
+                    get () {
+                        return this.depan + ' ' + this.belakang;
+                    },
+                    set (value) {
+                        var nama = value.split(' ');
+                        this.depan = nama[0]
+                        this.belakang = nama[nama.length - 1];
+                    }
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>

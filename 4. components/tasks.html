@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS 2 - Tutorial</title>
+</head>
+<body>
+   
+    <div id="app">
+        <TaskList></TaskList>
+    </div>
+   
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript">
+        Vue.component('tasklist', {
+            template: "<div><task v-for='tk in tasks' v-show='tk.complete' v-text='tk.task'></task></div>",
+            data() {
+                return {
+                    tasks: [
+                        { task: 'Belajar VueJS', complete: true },
+                        { task: 'Belajar ReactJS', complete: false },
+                        { task: 'Belajar Laravel', complete: true },
+                        { task: 'Belajar Firebase', complete: true }
+                    ]
+                }
+            }
+        })
+        
+        Vue.component('task', {
+            template: '<li><slot></slot></li>'
+        })
+        
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message : 'Hello Vue'
+            }
+        })
+        
+    </script>
+</body>
+</html>

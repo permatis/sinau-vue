@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS 2 - Pengenalan</title>
+</head>
+<body>
+   
+    <div id="app">
+        <h1>{{ kata }}</h1>
+    </div>
+   
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                kata : {'Hello VueJS'}
+            }
+        })
+        
+    </script>
+</body>
+</html>

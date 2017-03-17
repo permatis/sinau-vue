@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS 2 - Tutorial</title>
+    
+</head>
+<style type="text/css">
+    .completed {
+        text-decoration: line-through;
+    }
+</style>
+<body>
+   
+    <div id="app">
+        <h1>Semua Tasks</h1>
+        <TaskList></TaskList>
+    </div>
+   
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript">
+       var TaskList =  Vue.component('tasklist', {
+            template: `
+                <div>
+                    <task v-for="task in tasks" :class="{completed:task.complete}" :key="task.id">
+                        <input type="checkbox" @click="say(task, task.complete)" :checked="task.complete">
+                        {{ task.task }}
+                    </task>
+                    <p>Jumlah task: {{ tasks.length }} item</p><p>Active: {{ tasks | active }} item</p> <p>Completed: {{ tasks | completed }} item</p>
+                    <label>Buat Tasks : </label><input type="text" v-model="task" @keyup.enter="addNewTask">
+                </div>`,
+            data() {
+                return {
+                    tasks: [
+                        { id:1, task: 'Belajar VueJS', complete: true },
+                        { id:2, task: 'Belajar ReactJS', complete: false },
+                        { id:3, task: 'Belajar Laravel', complete: true },
+                        { id:4, task: 'Belajar Firebase', complete: true }
+                    ],
+                    checked: true,
+                    task: ''
+                }
+            },
+            methods: {
+                say(task, complete) {
+                    return task.complete = !complete
+                },
+                addNewTask() {
+                    this.tasks.push({id: this.tasks.length+1, task: this.task, complete: false })
+                    this.task = ''
+                }
+            },
+           filters : {
+               active (value) {
+                   var falseCount = 0;
+                   
+                   for(var i=0;i<value.length;i++){
+                        if(value[i].complete === false)
+                           falseCount++;
+                    }
+                   return falseCount;
+               },
+               completed (value) {
+                   var trueCount = 0;
+                   
+                   for(var i=0;i<value.length;i++){
+                        if(value[i].complete === true)
+                           trueCount++;
+                    }
+                   return trueCount;
+               }
+           }
+        })
+        
+        Vue.component('task', {
+            template: '<li><slot></slot></li>'
+        })
+        
+        var app = new Vue({
+            el: '#app'
+        })
+        
+    </script>
+</body>
+</html>

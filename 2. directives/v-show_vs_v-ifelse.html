@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS 2 - Tutorial</title>
+</head>
+<body>
+   
+    <div id="app">
+        <!-- Ini adalah contoh directive v-show-->
+        <p>Ini contoh menggunakan directive v-show :</p>
+        <h4 v-show="true">Jika nilainya benar</h4>
+        <h4 v-show="salah">Jika nilainya salah</h4>
+        
+        <!-- Ini adalah contoh directive v-if-else-->
+        <p>Ini adalah contoh directive v-if-else :</p>
+        <h4 v-if="false">Jika nilainya salah</h4>
+        <h4 v-else>Jika nilainya benar</h4>
+    </div>
+   
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript">
+        let data = {
+            benar: true,
+            salah: false,
+        };
+        
+        var app = new Vue({
+            el: '#app',
+            data: data
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS 2 - Tutorial</title>
+    <style type="text/css">
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="app">
+        <!-- Ini adalah contoh directive v-cloak -->
+        <p>Ini contoh menggunakan directive v-cloak :</p>
+        <div v-cloak>{{ message }}</div>
+    </div>
+   
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript">
+        let data = {
+            message: 'Hello',
+        };
+        
+        var app = new Vue({
+            el: '#app',
+            data: data
+        })
+        
+    </script>
+</body>
+</html>

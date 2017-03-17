@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS 2 - Tutorial</title>
+</head>
+<body>
+   
+    <div id="app">
+        <!-- Ini adalah contoh directive v-once -->
+        <p>Ini contoh menggunakan directive v-once :</p>
+        <h4 v-once>{{ message }}</h4>
+    </div>
+   
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript">
+        let data = {
+            message: 'Hello',
+        };
+        
+        var app = new Vue({
+            el: '#app',
+            data: data
+        })
+        
+    </script>
+</body>
+</html>

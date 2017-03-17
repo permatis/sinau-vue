@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS 2 - Tutorial</title>
+</head>
+<body>
+   
+    <div id="app">
+        <p>Lagi belajar VueJS nih. VueJS itu keren!!!</p>
+        <p>{{ jumlah }} like</p>
+        <button @click="like()">{{ likeOrUnlike }}</button>
+    </div>
+   
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                jumlah: 0,
+                liked: false
+            }, 
+            methods: {
+                like () {
+                    if(! this.liked) {
+                        this.liked = true;
+                        this.jumlah += 1;
+                    } else {
+                        this.liked = false;
+                        this.jumlah -= 1;
+                    }
+                }
+            },
+            computed: {
+                likeOrUnlike () {
+                    return (this.liked) ? 'Unlike' : 'Like'
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>

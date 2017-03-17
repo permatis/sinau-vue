@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS 2 - Tutorial</title>
+</head>
+<body>
+   
+    <div id="app">
+        <!-- Ini adalah contoh directive v-on-->
+        <p>Contoh 1 - method handler</p>
+        <button v-on:click="total+=1">Tambah</button>
+        <p>{{ total }} anu</p>
+        
+        <p>Contoh 2 - inline statement</p>
+        <button @click.prevent="sayHello('hello', $event)">Say</button>
+        
+        <p>Contoh 3 - method handler</p>
+        <button @click="tambahkan(hasil)">Tambahkan</button>
+        <input type="number" v-model="jumlah">
+        <p>{{ hasil }} item</p>
+        
+        <p>Contoh 4 - key modifier using keyAlias </p>
+        <button @click="tambahkan(hasil)">Tekan Enter</button>
+        <input type="number" v-model="jumlah" @keyup.enter="tambahkan(hasil)">
+        <p>{{ hasil }} item duplicate</p>
+    </div>
+        
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript">
+        
+        var app = new Vue({
+            el: '#app',
+            data: {
+                total: 0,
+                hasil: 0,
+                jumlah: null
+            },
+            methods: {
+                sayHello ($event) {
+                    alert($event);
+                },
+                tambahkan (hasil) {
+                    this.hasil = hasil + this.jumlah;
+                    this.jumlah = '';
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS 2 - Tutorial</title>
+</head>
+<body>
+   
+    <div id="app">
+        <!-- Ini adalah contoh menggunakan directive v-model -->
+        <p>Ini adalah contoh menggunakan directive v-model</p>
+        <input type="text" v-model="message">
+        <p>yang anda tulis : <b>{{ message }}</b></p>
+        <input type="checkbox" v-model="checked">
+        <p>{{  checked }}</p>
+        
+        
+        <!-- Ini adalah contoh menggunakan directive v-bind -->
+        <p>Ini adalah contoh menggunakan directive v-bind</p>
+        <input v-bind:type="type" v-bind:title="title" v-bind:value="message">
+        <p>Atau dapat menghilangkan directive v-bind namun dengan tambahan prefix titik dua (:)</p>
+        <input :type="type" :title="title" :value="message">
+    </div>
+   
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript">
+        let data = {
+            message: 'Hello VueJS',
+            title: 'Vue is awesome!!!',
+            type: 'text',
+            checked: true
+        };
+        
+        var app = new Vue({
+            el: '#app',
+            data: data
+        })
+        
+    </script>
+</body>
+</html>

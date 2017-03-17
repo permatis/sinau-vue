@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS 2 - Tutorial</title>
+</head>
+<body>
+   
+    <div id="app">
+        <h1>Original message : {{ message }}</h1>
+        <h1>Setelah di computed : {{ balikKata }}</h1>
+        <h1>Menggunakan methods : {{ balikKatas() }}</h1>
+    </div>
+   
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message : 'Hello Vue'
+            },
+            computed: {
+                balikKata () {
+                    return Date.now();
+                }
+            },
+            methods: {
+                balikKatas () {
+                    return Date.now();
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>
